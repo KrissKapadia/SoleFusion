@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: grey; /* Background for the entire body */
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Navigation bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 34px;
+}
+
+.nav-links li {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Menu link styles */
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: var(--red);
+    color: white;
+}
+
+/* Dropdown menu styling */
+.menu-item {
+    position: relative;
+}
+
+.dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white; /* Dropdown background color */
+    color: black;
+    border-radius: 5px;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    z-index: 100;
+    min-width: 180px;
+}
+
+/* Show dropdown on hover over the menu item or dropdown */
+.menu-item:hover .dropdown,
+.dropdown:hover {
+    display: block; /* Keep dropdown visible while hovering */
+}
+
+/* Use JS to toggle visibility, not just hover */
+.dropdown-active {
+    display: block; /* Use this class to show the dropdown when active */
+}
+
+.dropdown li {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown li:hover {
+    background-color: var(--red); /* Background color for dropdown items on hover */
+    color: white;
+}
+
+/* Color variables */
+:root {
+    --red: #d01c28;
+    --gray: #2e2e2e;
+}
+
+/* Button styles */
+button {
+    all: unset;
+    padding: 6px 16px;
+    background: var(--red);
+    height: 32px;
+    color: white;
+    font-weight: 500;
+}
+
+/* Shoe section styles */
+.Shoes {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 72px);
+}
+
+.Shoes h1 {
+    font-weight: 800;
+    font-size: 108px;
+    line-height: 102px;
+    margin: 15px;
+}
+
+.Shoes p {
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.Shoes-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    font-size: 24px;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--gray);
+    border: 1px solid gray;
+}
+
+.Shopping p {
+    font-size: 14px;
+}
+
+/* Brand logo styling */
+.brand-logo {
+    display: flex;
+    height: 40px;
+    width: 50px;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Shoes content styling */
+.Shoes-content {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* Image zoom effect */
+.zoom-image {
+    transition: transform 0.3s ease;
+    width: 300px;
+    height: auto;
+}
+
+.zoom-image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Logo styling */
+.logo-color {
+    background: grey;
+    height: 80px;
+    margin: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown {
+        min-width: auto; /* Reset min-width for smaller screens */
+    }
+
+    .dropdown li {
+        padding: 10px;
+    }
+}
